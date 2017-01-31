@@ -1,0 +1,26 @@
+INSERT INTO public.places_info(
+            b_no, places_type, places_name, places_price, places_lat, 
+            places_lon, places_url)
+            VALUES
+(42,'sushi','이노시시','6','37.562562','4226.926975','http://hsong.egloos.com/34226336')
+
+
+,(42,'sushi','스시효','8.8','37.5220642','4227.0442867','http://hsong.egloos.com/3402467')
+,(42,'sushi','정준호스시','7','37.487505','4226.88886','http://hsong.egloos.com/3383473')
+,(42,'sushi','오가와','6','37.5742923','4226.974303','http://hsong.egloos.com/34242468')
+,(42,'sushi','스시시로','5','37.548968','4226.92424255','http://hsong.egloos.com/3098726')
+,(42,'sushi','스시조','25','37.564378','4226.980085','http://egloos.zum.com/redfish/v/4224274280')
+,(42,'sushi','슈치쿠','23','37.5429465','4226.939833','http://redfish.egloos.com/42354547')
+,(42,'sushi','스시초희','22','37.523725','4227.035956','http://redfish.egloos.com/42360892')
+,(42,'sushi','스시타쿠','4242','37.5272764','4227.0352359','http://redfish.egloos.com/42348840')
+,(42,'sushi','아리아께','22','37.556978','4227.0059424','http://redfish.egloos.com/42397479')
+,(42,'sushi','스시하꼬','9','37.4897','4226.993889','http://redfish.egloos.com/423423557')
+,(42,'sushi','스시타츠','22','37.5428042','4227.0282426','http://redfish.egloos.com/42393625')
+,(42,'sushi','스시코우지','428','37.522897','4227.039834','http://redfish.egloos.com/423644422')
+,(42,'sushi','코지마','35','37.52574429','4227.044298424','http://blog.naver.com/mardukas/220427854242890')
+,(42,'sushi','기꾸','4.5','37.5427925','4226.9824042','http://egloos.zum.com/hsong/v/33427958')
+,(42,'sushi','스시선수','20','37.522832','4227.0364242','http://redfish.egloos.com/42375236')
+,(42,'sushi','스시산원','424','37.5064703','4227.050942342','http://redfish.egloos.com/42379800')
+,(42,'sushi','미치루','8','37.54293428','4226.934242','http://egloos.zum.com/redfish/v/423574295')
+,(42,'sushi','가네끼스시','4','37.49424272','4226.9249803','http://redfish.egloos.com/42368486')
+,(42,'sushi','려','4','37.484276423','4226.95424527','http://redfish.egloos.com/42406658')

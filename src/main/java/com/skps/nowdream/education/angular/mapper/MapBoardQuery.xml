@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC '-//mybatis.org//DTD Mapper 3.0//EN' 'http://mybatis.org/dtd/mybatis-3-mapper.dtd'>
+<mapper namespace='com.skps.nowdream.education.angular.MapBoardQuery'>
+	<select id='getList' parameterType="java.util.HashMap" resultType='java.util.HashMap'>
+		SELECT 
+			 B.b_no
+			,B.b_title
+			,B.b_content
+			,B.b_date
+			,B.b_hit
+			,B.b_id
+			,B.b_password
+			,B.use_yn
+			,A.PLACES_NO
+			,A.b_no
+			,A.places_type
+			,A.places_name
+			,A.places_price
+			,A.places_lat
+			,A.places_lon
+			,A.places_url
+		  FROM PUBLIC.PLACES_INFO A, PUBLIC.BOARD_FREE B 
+		 WHERE 1=1
+		 AND A.B_NO = B.B_NO
+		 AND B.USE_YN = 'Y'
+		 ORDER BY A.B_NO DESC
+		 LIMIT 5;
+	</select>
+	
+	<select id='getPlaces' parameterType="java.util.HashMap" resultType='java.util.HashMap'>
+	SELECT
+			 B.b_no
+			,B.b_title
+			,B.b_content
+			,B.b_date
+			,B.b_hit
+			,B.b_id
+			,B.b_password
+			,B.use_yn
+			,A.PLACES_NO
+			,A.b_no
+			,A.places_type
+			,A.places_name
+			,A.places_price
+			,A.places_lat
+			,A.places_lon
+			,A.places_url
+	FROM PUBLIC.PLACES_INFO A, PUBLIC.BOARD_FREE B
+	WHERE 1=1
+	AND A.B_NO = B.B_NO
+	AND B.USE_YN = 'Y'
+	ORDER BY A.B_NO ASC
+	</select>
+	
+	<insert id='getWriteBoard' parameterType="java.util.HashMap">
+	INSERT INTO public.board_free(
+				b_title
+			   ,b_content
+			   ,b_date
+			   ,b_hit
+			   ,b_id
+			   ,b_password
+			   )
+    	VALUES ( 
+    		    #{title}
+    		   ,#{content}
+    		   ,to_char(now(),'yyyymmdd hh24:mm')
+    		   ,1
+    		   ,#{writer}
+    		   ,#{password}
+    		   )
+	</insert>
+	
+	<insert id='getWritePlace' parameterType="java.util.HashMap">
+		INSERT INTO public.places_info(
+		             places_no
+		            ,b_no
+		            ,places_type
+		            ,places_name
+		            ,places_price
+		            ,places_lat
+		            ,places_lon
+		            ,places_url
+		            )
+		    VALUES (
+			    (select nextval('places'))
+			   ,(select currval('board_free_b_no_seq'))
+			   ,'Temp'
+			   ,#{placesName}
+			   ,10099
+			   ,#{placesLat}
+			   ,#{placesLon}
+			   ,#{placesUrl}
+			   );
+	</insert>
+	
+	</mapper>
